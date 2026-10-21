@@ -16,8 +16,8 @@ EFFECTIVE_EN = "October 17, 2026"
 CONTACT = "planarfigure@gmail.com"
 APP_KO = "쏙"
 APP_EN = "ssok"
-PLAY_NAME_KO = "쏙 - 스크린샷 정리와 사진 기록"
-PLAY_NAME_EN = "ssok - Screenshots & Notes"
+PLAY_NAME_KO = "쏙 - 스크린샷 정리 · 캡처 보관함"
+PLAY_NAME_EN = "ssok - Screenshot Organizer"
 
 CSS = """
 :root { color-scheme: light; }
@@ -240,7 +240,7 @@ def page(file, title, inner):
 <body><div class="wrap">
 {nav(file)}
 {inner}
-<footer>문의 · Contact <a href="mailto:{CONTACT}">{CONTACT}</a></footer>
+<footer>운영 · Operated by 플래너피규어(Planar Figure)<br>문의 · Contact <a href="mailto:{CONTACT}">{CONTACT}</a></footer>
 </div></body>
 </html>
 """
