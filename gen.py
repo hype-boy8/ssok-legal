@@ -13,7 +13,7 @@ import pathlib
 OUT = pathlib.Path(__file__).resolve().parent
 EFFECTIVE_KO = "2026년 10월 17일"
 EFFECTIVE_EN = "October 17, 2026"
-CONTACT = "zxcvzxcv4423@gmail.com"
+CONTACT = "planarfigure@gmail.com"
 APP_KO = "쏙"
 APP_EN = "ssok"
 PLAY_NAME_KO = "쏙 - 스크린샷 정리와 사진 기록"
