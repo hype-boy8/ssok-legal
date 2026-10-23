@@ -151,7 +151,11 @@ TERMS_KO = [
     ("3. 무료 체험과 쏙 프로",
      [["앱을 처음 설치한 날부터 30일 동안 모든 기능을 무료로 쓸 수 있습니다.",
        "체험이 끝나면 새 캡처 담기와 새 기록 시작만 멈춥니다. 이미 담은 것은 계속 열고, 꺼내 쓰고, 끝내고, 삭제할 수 있습니다.",
-       "\"쏙 프로\"를 한 번 구매하면 새로 담기를 계속 쓸 수 있습니다. 구독이 아니며 추가 결제가 없습니다.",
+       "쏙 프로는 월 구독과 평생 구매 중 선택할 수 있으며, 제공하는 기능은 같습니다. 한국 기준 월 구독은 월 2,000원, 평생 구매는 15,000원입니다. 다른 국가의 통화·세금·최종 가격은 구매 화면에 표시됩니다.",
+       "30일 앱 무료 체험은 결제 정보 없이 시작하며, 종료돼도 자동 청구되거나 구독이 시작되지 않습니다. 월 구독을 직접 구매하면 그때부터 매월 자동 갱신됩니다.",
+       "월 구독은 Google Play의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간까지 이용할 수 있으며, 이후 갱신되지 않습니다. 앱 삭제만으로 구독이 해지되지는 않습니다.",
+       "평생 구매는 한 번 결제하며 자동 갱신이나 정기 청구가 없습니다. 유효한 월 구독 기간에는 앱에서 평생 구매를 추가로 결제할 수 없고, 해지 후 이용 기간이 끝나면 다시 선택할 수 있습니다.",
+       "월 구독은 이용권 확인을 위해 24시간에 한 번 Google Play에 연결해야 합니다. 확인하지 못해 새로 담기가 일시 중지돼도 기존 자료는 계속 열 수 있습니다. 평생 구매는 구매 복원 후 오프라인에서도 이용할 수 있습니다.",
        "구매는 구매에 쓴 구글 계정에 기록되어, 같은 계정으로 다시 설치하면 \"구매 내역 다시 불러오기\"로 되살릴 수 있습니다.",
        "결제와 환불은 구글 플레이의 정책과 절차를 따릅니다."]]),
     ("4. 인식 결과와 알림의 한계",
@@ -182,7 +186,11 @@ TERMS_EN = [
     ("3. Free trial and ssok Pro",
      [["All features are free for 30 days from the day you first install the App.",
        "After the trial, only adding new captures and starting new records stops. You can still open, use, finish and delete what you already saved.",
-       "A one-time purchase of \"ssok Pro\" keeps adding new items available. It is not a subscription and there are no further charges.",
+       "ssok Pro offers monthly and lifetime access with the same features. In South Korea, monthly access costs KRW 2,000 per month and lifetime access costs KRW 15,000 once. Local currency, taxes and the final price are shown before purchase.",
+       "The 30-day app trial starts without payment details and never automatically charges you or starts a subscription. A monthly subscription starts only when you explicitly purchase it, and renews automatically each month.",
+       "Cancel anytime in Google Play subscription management. Access continues until the paid period ends, with no subsequent renewal. Uninstalling the App does not cancel a subscription.",
+       "Lifetime access is a one-time payment with no automatic renewal or recurring charges. The App does not offer an additional lifetime purchase while monthly access is active. Cancel your subscription and choose lifetime after the paid period ends.",
+       "Monthly access requires a Google Play check at least once every 24 hours. If access cannot be checked, adding new items may pause, while saved items remain available. Lifetime access works offline after purchase is restored.",
        "The purchase is tied to the Google account used to buy it. Reinstall with the same account and use \"Restore purchase\".",
        "Payments and refunds follow Google Play's policies and procedures."]]),
     ("4. Limits of recognition and reminders",
@@ -248,13 +256,15 @@ def page(file, title, inner):
 
 
 def legal(file, ko_title, en_title, ko, en):
+    effective_ko = "2026년 10월 23일" if file == "terms.html" else EFFECTIVE_KO
+    effective_en = "October 23, 2026" if file == "terms.html" else EFFECTIVE_EN
     page(file, f"{ko_title} · {APP_KO}", f"""
 <h1>{esc(ko_title)}</h1>
-<p class="meta">{APP_KO} · 시행일 {EFFECTIVE_KO} · <a href="#en">English</a></p>
+<p class="meta">{APP_KO} · 시행일 {effective_ko} · <a href="#en">English</a></p>
 {body(ko)}
 <div class="lang" id="en">
 <h1>{esc(en_title)}</h1>
-<p class="meta">{APP_EN} · Effective {EFFECTIVE_EN}</p>
+<p class="meta">{APP_EN} · Effective {effective_en}</p>
 {body(en)}
 </div>""")
 
